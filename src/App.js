@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react';
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import CreateResume from './components/CreateResume';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      resume:  {
+        first: '',
+        last: '',
+        email: '',
+        number: '',
+      },
+      resumes: [],
+    };
+  }
+
+
+  render() {
+    return (
+      <div className='page'>
+        <Navbar />
+        <CreateResume />
+        <Footer />
+      </div>  
+    )
+  }
 }
 
 export default App;
